@@ -8,7 +8,6 @@ package MobileApp {
     user -> (ListExercises)
     user -> (SortExercises)
     user -> (SearchExercises)
-
     (SearchExercises) .> (ListExercises)
     (SortExercises) .> (ListExercises)
     (ReadText) .> (ListExercises)
@@ -16,7 +15,6 @@ package MobileApp {
     user -> (ReadText)
     user -> (ViewCompletion)
     user -> (ViewReadingProfficiency)
-
     (ViewCompletion) .> (ReadText)
 
     user --> (SwitchUser)
@@ -24,14 +22,12 @@ package MobileApp {
 }
 
 package WebApp {
+    admin <|-- sudo
     sudo --> (AddAdministrator)
     sudo --> (RemoveAdministrator)
-    
     admin --> (AddText)
     admin --> (RemoveText)
     admin --> (EditText)
     admin --> (EditTextMetadata)
-
-    sudo --> (WebLogin)
     admin --> (WebLogin)
 }
