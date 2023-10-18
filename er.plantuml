@@ -1,0 +1,33 @@
+@startuml
+
+entity Exercise {
+    id_exercise
+    title
+    text
+    category
+    complexity
+}
+
+entity User {
+    id_user
+    username
+    password
+    reading_profficiency
+}
+
+entity UserExercise {
+    id_user
+    id_exercise
+    completion
+}
+
+entity Administrator {
+    id_administrator
+    username
+    password
+    is_superuser: bool
+}
+
+User ||--o{ UserExercise
+Exercise ||--o{ UserExercise
+@enduml
