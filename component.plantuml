@@ -1,0 +1,30 @@
+database DB as db
+
+package BackendService {
+    [ExerciseViewer] as exerciseViewer
+    [ExerciseEditor] as exerciseEditor
+    [UserManager] as userManager
+    [AdminManager] as adminManager
+
+    exerciseViewer- db
+    exerciseEditor- db
+
+    adminManager -d- db
+    userManager -d- db
+}
+exerciseViewer -u- IViewExercise
+exerciseEditor -u- IEditExercise
+userManager -u- IUser
+adminManager -u- IAdmin
+
+package AdminApp {
+    [ExerciseList_] -d-> IViewExercise
+    [TextEditor] -d-> IEditExercise
+    [UserEditor] -d-> IAdmin
+}
+
+package MobileApp {
+    [ExerciseList] -d-> IViewExercise
+    [ExerciseReader] -d-> IViewExercise
+    [UserProfile] -d-> IUser
+}

@@ -10,7 +10,7 @@ entity Exercise {
 
 entity User {
     id_user
-    username
+    email
     password
     reading_profficiency
 }
@@ -23,7 +23,7 @@ entity UserExercise {
 
 entity Administrator {
     id_administrator
-    username
+    email
     password
     is_superuser: bool
 }
